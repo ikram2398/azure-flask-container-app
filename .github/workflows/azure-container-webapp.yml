@@ -3,7 +3,7 @@ name: Build and deploy a container to an Azure Web App
 env:
   AZURE_WEBAPP_NAME: ikram-flask-app
 
-on: workflow_dispatch
+on: push
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ikram2398/my-web-app:V1
+          tags: ikram2398/my-web-app:${{ steps.extract_sha.outputs.sha_short }}
           labels: ${{ steps.meta.outputs.labels }}
 
       
