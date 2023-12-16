@@ -28,7 +28,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ikram2398/my-web-app:${{ steps.extract_sha.outputs.sha_short }}
+          tags: ikram2398/my-web-app:V2
           labels: ${{ steps.meta.outputs.labels }}
 
       
